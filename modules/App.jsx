@@ -9,8 +9,11 @@ var App = React.createClass({
       <div>
         <header>
           <ul>
-	    <li><Link to="/home">Home</Link></li>
-	    <li><Link to="/about">About</Link></li>
+	    <nav className='abc'>
+	      <Link to="/home">Home</Link>
+	      <Link to="/about">About</Link>
+	      <Link to="/webpack">Webpack</Link>
+	    </nav>
           </ul>
         </header>
 
