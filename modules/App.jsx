@@ -7,6 +7,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
+	<h1>Tour of Heroes - React</h1>
         <header>
           <ul>
 	    <nav className='abc'>

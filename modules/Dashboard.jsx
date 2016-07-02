@@ -14,6 +14,20 @@ var data = [ {id: 11, name: 'Max Zhang'},
       {id: 20, name: 'Tornado'}];
 
 
+var nextId = 21;
+
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+
 
 
 
@@ -24,12 +38,21 @@ var Dashboard= React.createClass({
   },
 
 
+  shoot : function() {
+    for(var i = 0; i< 2000; i++) {
+      data.push({id : nextId++, name : makeid()});
+    }
+    this.setState({data:data});
+  },
+
+
   render: function() {
     return (
       <div>
 	<h1>
 	  DashBoard
 	</h1>
+	<input type='button' value="2000 data" onClick={this.shoot}/>
 	<Heroes data={this.state.data}></Heroes>
       </div>
     );
