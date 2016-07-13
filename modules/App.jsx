@@ -14,6 +14,7 @@ var App = React.createClass({
 	      <Link to="/home">Home</Link>
 	      <Link to="/about">About</Link>
 	      <Link to="/webpack">Webpack</Link>
+	      <Link to="/bigtable">BigTable</Link>
 	    </nav>
           </ul>
         </header>

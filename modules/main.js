@@ -2,6 +2,7 @@ var App = require('./App');
 var Dashboard = require('./Dashboard');
 var About = require('./About');
 var Webpack= require('./Webpack');
+var BigTable= require('./BigTable');
 var filetypepng= require('./filetype.png');
 var filetypepdfpng= require('./filetype_pdf.png');
 var React  = require('react');
@@ -16,6 +17,7 @@ var routes = (
       <Route path="/about" component={About} />
       <Route path="/home" component={Dashboard} />
       <Route path="/webpack" component={Webpack} />
+      <Route path="/bigtable" component={BigTable} />
       <Route path="/hero/:heroId" component={Hero} />   
     </Route>
   </Router>
