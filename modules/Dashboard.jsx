@@ -34,9 +34,14 @@ function makeid()
 var Dashboard= React.createClass({
 
   getInitialState: function() {
+    window.addEventListener("message", function(event) {
+        console.log('in the react app ' + event.data);
+        document.getElementById("forei").innerText=event.data;}, false);   
     return {data:data};
   },
-
+  handleNameChange: function(e) {
+    this.setState({name: e.target.value});
+  },
 
   shoot : function() {
     for(var i = 0; i< 2000; i++) {
@@ -44,11 +49,21 @@ var Dashboard= React.createClass({
     }
     this.setState({data:data});
   },
+  send : function() {
+    window.parent.postMessage(this.state.name, '*');
+  },
 
 
   render: function() {
     return (
       <div>
+      <div>
+      <input type="text" id="xeroid" value={this.state.name}  onChange={this.handleNameChange}/>
+      <input type="button" onClick={this.send} value="send to EI xero" />
+      </div>
+      <div >
+        The content from EI Xero: <span id="forei" ></span>
+      </div>
 	<h1>
 	  DashBoard
 	</h1>

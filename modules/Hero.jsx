@@ -3,12 +3,18 @@ var React = require('react');
 var Hero= React.createClass({
 
   getInitialState: function() {
+    
+    
     return {name: '', id: 0};
+    
   },
   create: function() {
     var name = this.state.name;
     this.props.onCreate(name);
-    setState({name:''});
+    this.setState({name:''});
+  },
+  updateName : function(names) {
+    this.setState({name : names});
   },
   handleNameChange: function(e) {
     this.setState({name: e.target.value});
@@ -22,6 +28,7 @@ var Hero= React.createClass({
       <div>
         Name : <input
           type="text"
+          id="nameid"
           placeholder="Your name"
 	  value={this.state.name}
           onChange={this.handleNameChange}
